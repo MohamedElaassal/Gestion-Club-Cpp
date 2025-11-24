@@ -60,24 +60,27 @@ conception console :
 5. Quitter
 **************************************
 conception database :
+CREATE DATABASE gestion_clubs;
+USE gestion_clubs;
+
 CREATE TABLE clubs (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR
+    nom VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE etudiants (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR,
-    prenom VARCHAR,
-    tele VARCHAR
-   
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    tele VARCHAR(20)
 );
 
 CREATE TABLE membres (
-    etudiant_id INT  ,
-    club_id INT ,
-    role Enum,
+    etudiant_id INT,
+    club_id INT,
+    role VARCHAR(100) NOT NULL,
     PRIMARY KEY (etudiant_id, club_id),
     FOREIGN KEY (club_id) REFERENCES clubs(id),
     FOREIGN KEY (etudiant_id) REFERENCES etudiants(id)
 );
+
