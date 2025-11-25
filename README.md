@@ -66,6 +66,7 @@ USE gestion_clubs;
 CREATE TABLE clubs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL
+    description VARCHAR(100) NOT NULL,
 );
 
 CREATE TABLE etudiants (
