@@ -1,45 +1,40 @@
 @echo off
-setlocal
+   setlocal
 
-REM Add MSYS2 to PATH
-set PATH=C:\msys64\ucrt64\bin;%PATH%
+   set PATH=C:\msys64\ucrt64\bin;%PATH%
+   cd /d "%~dp0"
 
-REM Change to project directory
-cd /d "%~dp0"
+   echo ================================
+   echo Building Gestion Club Project...
+   echo ================================
+   echo.
 
-echo ================================
-echo Building Gestion Club Project...
-echo ================================
-echo.
+   g++ -g -std=c++17 -Wall -Wextra ^
+       "Src/Main.cpp" ^
+       "Src/Etudiant.cpp" ^
+       "Src/Club.cpp" ^
+       "Src/Membre.cpp" ^
+       "Src/GestionClub.cpp" ^
+       "Src/Database.cpp" ^
+       "-IHeaders" ^
+       -I"C:/msys64/ucrt64/include/mysql" ^
+       -L"C:/msys64/ucrt64/lib" ^
+       -lmariadb ^
+       -o "Main.exe"
 
-g++ -g -std=c++17 -Wall -Wextra ^
-    "Src/Main.cpp" ^
-    "Src/Etudiant.cpp" ^
-    "Src/Club.cpp" ^
-    "Src/Membre.cpp" ^
-    "Src/GestionClub.cpp" ^
-    "-IHeaders" ^
-    -o "Main.exe"
+   if %errorlevel% equ 0 (
+       echo.
+       echo ================================
+       echo Build successful! ✓
+       echo ================================
+       echo.
+       Main.exe
+   ) else (
+       echo.
+       echo ================================
+       echo Build failed! ✗
+       echo ================================
+   )
 
-if %errorlevel% equ 0 (
-    echo.
-    echo ================================
-    echo Build successful! ✓
-    echo ================================
-    echo.
-    echo Running program...
-    echo ================================
-    echo.
-    Main.exe
-    echo.
-    echo ================================
-    echo Program finished.
-    echo ================================
-) else (
-    echo.
-    echo ================================
-    echo Build failed! ✗
-    echo ================================
-)
-
-endlocal
+   pause
+   endlocal
