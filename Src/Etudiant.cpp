@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Headers/Etudiant.h"
+#include "Etudiant.h"
 using namespace std;
 //Contructeur par defaut (sans parametre)
 Etudiant::Etudiant(){
@@ -58,4 +58,10 @@ string Etudiant::getTele(){
 }
 void Etudiant::setTele(string tele){
     this->tele=tele;
+}
+
+//ToString
+void Etudiant::affihcerInfos(){
+        cout<<"Id : "<<this->getId()<<" -- "<<"Nom : "<<this->getNom()<<" -- "<<"Prenom : "<<this->getPrenom()<<" -- "<<"Tele : "<<this->getTele()<<" ."<<endl;
+
 }

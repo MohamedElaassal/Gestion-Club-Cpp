@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Headers/Club.h"
+#include "Club.h"
 using namespace std;
 //Contructeur par defaut (sans parametre)
 Club::Club(){

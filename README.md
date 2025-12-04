@@ -85,3 +85,43 @@ CREATE TABLE membres (
     FOREIGN KEY (etudiant_id) REFERENCES etudiants(id)
 );
 
+
+
+gestion-clubs/
+├── backend/
+│   ├── src/
+│   │   ├── main.cpp
+│   │   ├── database/
+│   │   │   ├── Database.h
+│   │   │   └── Database.cpp
+│   │   ├── models/
+│   │   │   ├── Club.h
+│   │   │   ├── Etudiant.h
+│   │   │   └── Membre.h
+│   │   ├── controllers/
+│   │   │   ├── ClubController.h
+│   │   │   ├── ClubController.cpp
+│   │   │   ├── EtudiantController.h
+│   │   │   ├── EtudiantController.cpp
+│   │   │   ├── MembreController.h
+│   │   │   └── MembreController.cpp
+│   │   └── routes/
+│   │       └── Routes.cpp
+│   ├── CMakeLists.txt
+│   └── vcpkg.json
+├── frontend/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   ├── js/
+│   │   │   ├── main.js
+│   │   │   ├── clubs.js
+│   │   │   ├── etudiants.js
+│   │   │   └── membres.js
+│   │   └── img/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── clubs.html
+│   ├── etudiants.html
+│   └── membres.html
+└── README.md

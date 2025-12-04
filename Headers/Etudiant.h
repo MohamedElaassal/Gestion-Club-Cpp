@@ -40,6 +40,9 @@ class Etudiant{
         std::string getTele();
         void setTele(std::string);
 
+        //ToString
+        void affihcerInfos();
+
 };
 
 #endif
