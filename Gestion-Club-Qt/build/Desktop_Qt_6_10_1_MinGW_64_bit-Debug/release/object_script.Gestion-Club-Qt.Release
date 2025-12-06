@@ -1,0 +1,15 @@
+release/main.o
+release/mainwindow.o
+release/database.o
+release/studentdialog.o
+release/clubdialog.o
+release/logindialog.o
+release/registerdialog.o
+release/membershipdialog.o
+release/qrc_resources.o
+release/moc_mainwindow.o
+release/moc_studentdialog.o
+release/moc_clubdialog.o
+release/moc_logindialog.o
+release/moc_registerdialog.o
+release/moc_membershipdialog.o
