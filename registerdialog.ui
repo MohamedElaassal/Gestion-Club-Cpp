@@ -6,30 +6,80 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>250</height>
+    <width>450</width>
+    <height>350</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>350</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Register</string>
+   <string>Club Management - Register</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>20</number>
+   </property>
+   <property name="leftMargin">
+    <number>30</number>
+   </property>
+   <property name="topMargin">
+    <number>30</number>
+   </property>
+   <property name="rightMargin">
+    <number>30</number>
+   </property>
+   <property name="bottomMargin">
+    <number>30</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>Create New Account</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 18pt; font-weight: bold; color: #10b981;</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <layout class="QFormLayout" name="formLayout">
+     <property name="horizontalSpacing">
+      <number>15</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>15</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Username:</string>
        </property>
+       <property name="styleSheet">
+        <string>font-weight: 600;</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="usernameEdit"/>
+      <widget class="QLineEdit" name="usernameEdit">
+       <property name="placeholderText">
+        <string>Choose a username</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Password:</string>
+       </property>
+       <property name="styleSheet">
+        <string>font-weight: 600;</string>
        </property>
       </widget>
      </item>
@@ -38,6 +88,9 @@
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
        </property>
+       <property name="placeholderText">
+        <string>Create a strong password</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="0">
@@ -45,12 +98,18 @@
        <property name="text">
         <string>Confirm Password:</string>
        </property>
+       <property name="styleSheet">
+        <string>font-weight: 600;</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="confirmPasswordEdit">
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Re-enter your password</string>
        </property>
       </widget>
      </item>

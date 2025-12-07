@@ -6,15 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1100</width>
+    <height>700</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Gestion Club</string>
+   <string>Club Management System</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -22,13 +43,35 @@
       </property>
       <widget class="QWidget" name="studentTab">
        <attribute name="title">
-        <string>Students</string>
+        <string>📚 Students</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>15</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>10</number>
+          </property>
           <item>
-           <widget class="QLineEdit" name="studentSearchEdit"/>
+           <widget class="QLineEdit" name="studentSearchEdit">
+            <property name="placeholderText">
+             <string>🔍 Search students by name, phone...</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="studentSearchButton">
@@ -48,11 +91,27 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <!-- You can find icons from libraries like Font Awesome or Material Design Icons -->
            <widget class="QPushButton" name="addStudentButton">
             <property name="text">
-             <string>Add Student</string>
+             <string>➕ Add Student</string>
             </property>
             <property name="icon">
              <iconset>
@@ -64,7 +123,7 @@
           <item>
            <widget class="QPushButton" name="editStudentButton">
             <property name="text">
-             <string>Edit Student</string>
+             <string>✏️ Edit Student</string>
             </property>
             <property name="icon">
              <iconset>
@@ -76,7 +135,7 @@
           <item>
            <widget class="QPushButton" name="deleteStudentButton">
             <property name="text">
-             <string>Delete Student</string>
+             <string>🗑️ Delete Student</string>
             </property>
             <property name="icon">
              <iconset>
@@ -91,13 +150,35 @@
       </widget>
       <widget class="QWidget" name="clubTab">
        <attribute name="title">
-        <string>Clubs</string>
+        <string>🎯 Clubs</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>15</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>10</number>
+          </property>
           <item>
-           <widget class="QLineEdit" name="clubSearchEdit"/>
+           <widget class="QLineEdit" name="clubSearchEdit">
+            <property name="placeholderText">
+             <string>🔍 Search clubs by name, description...</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="clubSearchButton">
@@ -117,10 +198,26 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QPushButton" name="addClubButton">
             <property name="text">
-             <string>Add Club</string>
+             <string>➕ Add Club</string>
             </property>
             <property name="icon">
              <iconset>
@@ -132,7 +229,7 @@
           <item>
            <widget class="QPushButton" name="editClubButton">
             <property name="text">
-             <string>Edit Club</string>
+             <string>✏️ Edit Club</string>
             </property>
             <property name="icon">
              <iconset>
@@ -144,7 +241,7 @@
           <item>
            <widget class="QPushButton" name="deleteClubButton">
             <property name="text">
-             <string>Delete Club</string>
+             <string>🗑️ Delete Club</string>
             </property>
             <property name="icon">
              <iconset>
@@ -159,22 +256,40 @@
       </widget>
       <widget class="QWidget" name="membershipTab">
        <attribute name="title">
-        <string>Memberships</string>
+        <string>👥 Memberships</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>15</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>10</number>
+          </property>
           <item>
            <widget class="QLineEdit" name="studentFilterEdit">
             <property name="placeholderText">
-             <string>Filter by student...</string>
+             <string>🔍 Filter by student...</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="clubFilterEdit">
             <property name="placeholderText">
-             <string>Filter by club...</string>
+             <string>🔍 Filter by club...</string>
             </property>
            </widget>
           </item>
@@ -189,10 +304,26 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QPushButton" name="addMembershipButton">
             <property name="text">
-             <string>Add Membership</string>
+             <string>➕ Add Membership</string>
             </property>
             <property name="icon">
              <iconset>
@@ -204,7 +335,7 @@
           <item>
            <widget class="QPushButton" name="removeMembershipButton">
             <property name="text">
-             <string>Remove Membership</string>
+             <string>➖ Remove Membership</string>
             </property>
             <property name="icon">
              <iconset>
