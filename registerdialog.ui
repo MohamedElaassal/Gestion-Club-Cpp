@@ -61,6 +61,11 @@
      <property name="text">
       <string>Register</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/icons/register.png</normaloff>
+      </iconset>
+     </property>
     </widget>
    </item>
   </layout>

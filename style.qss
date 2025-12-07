@@ -1,81 +1,100 @@
 /* General Styling */
 QWidget {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #282c34; /* Darker background */
+    color: #abb2bf; /* Softer text color */
     font-family: "Segoe UI", sans-serif;
 }
 
 /* Main Window */
 QMainWindow {
-    background-color: #34495e;
+    background-color: #21252b;
 }
 
 /* Tab Widget */
 QTabWidget::pane {
-    border: 1px solid #2c3e50;
+    border: 1px solid #1c1f24;
     border-radius: 5px;
 }
 
 QTabBar::tab {
-    background-color: #34495e;
-    color: #ecf0f1;
+    background-color: #21252b;
+    color: #abb2bf;
     padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border: 1px solid #2c3e50;
+    border: 1px solid #1c1f24;
+    margin-right: 2px; /* Add space between tabs */
 }
 
 QTabBar::tab:selected {
-    background-color: #2c3e50;
-    border-bottom-color: #2c3e50;
+    background-color: #282c34;
+    border-bottom-color: #282c34;
+}
+
+QTabBar::tab:hover {
+    background-color: #3a3f4b;
 }
 
 /* Table View */
 QTableView {
-    background-color: #34495e;
-    border: 1px solid #2c3e50;
-    selection-background-color: #2980b9;
+    background-color: #282c34;
+    border: 1px solid #1c1f24;
+    selection-background-color: #3a3f4b;
+    gridline-color: #3a3f4b;
 }
 
 QHeaderView::section {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #21252b;
+    color: #abb2bf;
     padding: 5px;
-    border: 1px solid #34495e;
+    border: 1px solid #282c34;
 }
 
 /* Buttons */
 QPushButton {
-    background-color: #2980b9;
-    color: #ecf0f1;
+    background-color: #61afef; /* Brighter blue */
+    color: #21252b; /* Dark text for contrast */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 QPushButton:hover {
-    background-color: #3498db;
+    background-color: #6fbef9;
 }
 
 QPushButton:pressed {
-    background-color: #216a9a;
+    background-color: #529acb;
 }
 
-/* Line Edits and Text Edits */
-QLineEdit, QTextEdit {
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    border: 1px solid #bdc3c7;
+/* Line Edits, Text Edits, and Spin Boxes */
+QLineEdit, QTextEdit, QSpinBox, QComboBox {
+    background-color: #21252b;
+    color: #abb2bf;
+    border: 1px solid #1c1f24;
     border-radius: 5px;
     padding: 5px;
 }
 
+QLineEdit:focus, QTextEdit:focus, QSpinBox:focus, QComboBox:focus {
+    border: 1px solid #61afef; /* Highlight focus */
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/down_arrow.png); /* Example for a custom dropdown arrow */
+}
+
 /* Dialogs */
 QDialog {
-    background-color: #34495e;
+    background-color: #21252b;
 }
 
 /* Labels */
 QLabel {
-    color: #ecf0f1;
+    color: #abb2bf;
 }

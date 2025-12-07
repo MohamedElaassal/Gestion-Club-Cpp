@@ -94,9 +94,9 @@ public:
     void retranslateUi(QDialog *StudentDialog)
     {
         StudentDialog->setWindowTitle(QCoreApplication::translate("StudentDialog", "Student Details", nullptr));
-        label->setText(QCoreApplication::translate("StudentDialog", "Nom:", nullptr));
-        label_2->setText(QCoreApplication::translate("StudentDialog", "Prenom:", nullptr));
-        label_3->setText(QCoreApplication::translate("StudentDialog", "Tele:", nullptr));
+        label->setText(QCoreApplication::translate("StudentDialog", "Name:", nullptr));
+        label_2->setText(QCoreApplication::translate("StudentDialog", "First Name:", nullptr));
+        label_3->setText(QCoreApplication::translate("StudentDialog", "Phone:", nullptr));
     } // retranslateUi
 
 };

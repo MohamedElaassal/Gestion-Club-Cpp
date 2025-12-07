@@ -10,6 +10,7 @@
 #define UI_REGISTERDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
@@ -79,6 +80,9 @@ public:
 
         registerButton = new QPushButton(RegisterDialog);
         registerButton->setObjectName("registerButton");
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/register.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        registerButton->setIcon(icon);
 
         verticalLayout->addWidget(registerButton);
 

@@ -83,7 +83,7 @@ public:
     void retranslateUi(QDialog *ClubDialog)
     {
         ClubDialog->setWindowTitle(QCoreApplication::translate("ClubDialog", "Club Details", nullptr));
-        label->setText(QCoreApplication::translate("ClubDialog", "Nom:", nullptr));
+        label->setText(QCoreApplication::translate("ClubDialog", "Name:", nullptr));
         label_2->setText(QCoreApplication::translate("ClubDialog", "Description:", nullptr));
     } // retranslateUi
 

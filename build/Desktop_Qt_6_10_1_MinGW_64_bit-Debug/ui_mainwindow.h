@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -95,6 +96,7 @@ public:
 
         studentTableView = new QTableView(studentTab);
         studentTableView->setObjectName("studentTableView");
+        studentTableView->setAlternatingRowColors(true);
 
         verticalLayout_2->addWidget(studentTableView);
 
@@ -102,16 +104,25 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         addStudentButton = new QPushButton(studentTab);
         addStudentButton->setObjectName("addStudentButton");
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/add.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        addStudentButton->setIcon(icon);
 
         horizontalLayout->addWidget(addStudentButton);
 
         editStudentButton = new QPushButton(studentTab);
         editStudentButton->setObjectName("editStudentButton");
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/edit.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        editStudentButton->setIcon(icon1);
 
         horizontalLayout->addWidget(editStudentButton);
 
         deleteStudentButton = new QPushButton(studentTab);
         deleteStudentButton->setObjectName("deleteStudentButton");
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/delete.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        deleteStudentButton->setIcon(icon2);
 
         horizontalLayout->addWidget(deleteStudentButton);
 
@@ -140,6 +151,7 @@ public:
 
         clubTableView = new QTableView(clubTab);
         clubTableView->setObjectName("clubTableView");
+        clubTableView->setAlternatingRowColors(true);
 
         verticalLayout_3->addWidget(clubTableView);
 
@@ -147,16 +159,19 @@ public:
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         addClubButton = new QPushButton(clubTab);
         addClubButton->setObjectName("addClubButton");
+        addClubButton->setIcon(icon);
 
         horizontalLayout_2->addWidget(addClubButton);
 
         editClubButton = new QPushButton(clubTab);
         editClubButton->setObjectName("editClubButton");
+        editClubButton->setIcon(icon1);
 
         horizontalLayout_2->addWidget(editClubButton);
 
         deleteClubButton = new QPushButton(clubTab);
         deleteClubButton->setObjectName("deleteClubButton");
+        deleteClubButton->setIcon(icon2);
 
         horizontalLayout_2->addWidget(deleteClubButton);
 
@@ -185,6 +200,7 @@ public:
 
         membershipTableView = new QTableView(membershipTab);
         membershipTableView->setObjectName("membershipTableView");
+        membershipTableView->setAlternatingRowColors(true);
 
         verticalLayout_4->addWidget(membershipTableView);
 
@@ -192,11 +208,15 @@ public:
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         addMembershipButton = new QPushButton(membershipTab);
         addMembershipButton->setObjectName("addMembershipButton");
+        addMembershipButton->setIcon(icon);
 
         horizontalLayout_5->addWidget(addMembershipButton);
 
         removeMembershipButton = new QPushButton(membershipTab);
         removeMembershipButton->setObjectName("removeMembershipButton");
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/remove.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        removeMembershipButton->setIcon(icon3);
 
         horizontalLayout_5->addWidget(removeMembershipButton);
 

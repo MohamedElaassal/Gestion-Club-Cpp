@@ -10,6 +10,7 @@
 #define UI_LOGINDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
@@ -67,11 +68,17 @@ public:
 
         loginButton = new QPushButton(LoginDialog);
         loginButton->setObjectName("loginButton");
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/login.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        loginButton->setIcon(icon);
 
         verticalLayout->addWidget(loginButton);
 
         registerButton = new QPushButton(LoginDialog);
         registerButton->setObjectName("registerButton");
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/register.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        registerButton->setIcon(icon1);
 
         verticalLayout->addWidget(registerButton);
 
