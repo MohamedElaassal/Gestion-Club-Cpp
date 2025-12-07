@@ -2,13 +2,4 @@
     <qresource prefix="/">
         <file>style.qss</file>
     </qresource>
-    <qresource prefix="/icons">
-        <file>icons/add.png</file>
-        <file>icons/edit.png</file>
-        <file>icons/delete.png</file>
-        <file>icons/remove.png</file>
-        <file>icons/search.png</file>
-        <file>icons/login.png</file>
-        <file>icons/register.png</file>
-    </qresource>
 </RCC>
