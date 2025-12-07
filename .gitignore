@@ -1,0 +1,114 @@
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Qt-es
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+*.qm
+.qmake.stash
+
+# Qt unit tests
+target_wrapper.*
+
+# QtCreator
+*.autosave
+*.user
+*.cbp
+
+# QtCreator Qml
+*.qmlproject.user
+*.qmlproject.user.*
+
+# QtCreator CMake
+CMakeLists.txt.user*
+
+# QtCreator 4.8< compilation database 
+compile_commands.json
+
+# QtCreator local machine specific files for imported projects
+*creator.user*
+
+# Build directories
+build/
+Build/
+build-*/
+debug/
+Debug/
+release/
+Release/
+x64/
+x86/
+
+# Database files
+*.db
+*.sqlite
+*.db-journal
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Generated files
+GeneratedFiles/
+*.generated.*
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+
+# Log files
+*.log
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+*.7z
