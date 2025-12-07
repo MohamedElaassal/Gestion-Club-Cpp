@@ -14,10 +14,12 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
@@ -31,6 +33,10 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *headerLayout;
+    QLabel *welcomeLabel;
+    QSpacerItem *headerSpacer;
+    QPushButton *logoutButton;
     QTabWidget *tabWidget;
     QWidget *studentTab;
     QVBoxLayout *verticalLayout_2;
@@ -39,6 +45,7 @@ public:
     QPushButton *studentSearchButton;
     QTableView *studentTableView;
     QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
     QPushButton *addStudentButton;
     QPushButton *editStudentButton;
     QPushButton *deleteStudentButton;
@@ -49,6 +56,7 @@ public:
     QPushButton *clubSearchButton;
     QTableView *clubTableView;
     QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
     QPushButton *addClubButton;
     QPushButton *editClubButton;
     QPushButton *deleteClubButton;
@@ -59,6 +67,7 @@ public:
     QLineEdit *clubFilterEdit;
     QTableView *membershipTableView;
     QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_3;
     QPushButton *addMembershipButton;
     QPushButton *removeMembershipButton;
     QMenuBar *menubar;
@@ -68,18 +77,60 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1100, 700);
+        MainWindow->setMinimumSize(QSize(900, 600));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setSpacing(10);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(15, 15, 15, 15);
+        headerLayout = new QHBoxLayout();
+        headerLayout->setSpacing(10);
+        headerLayout->setObjectName("headerLayout");
+        welcomeLabel = new QLabel(centralwidget);
+        welcomeLabel->setObjectName("welcomeLabel");
+        welcomeLabel->setStyleSheet(QString::fromUtf8("font-size: 18px; font-weight: bold; color: #2c3e50;"));
+
+        headerLayout->addWidget(welcomeLabel);
+
+        headerSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        headerLayout->addItem(headerSpacer);
+
+        logoutButton = new QPushButton(centralwidget);
+        logoutButton->setObjectName("logoutButton");
+        logoutButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #e74c3c, stop:1 #c0392b);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    padding: 8px 20px;\n"
+"    border-radius: 6px;\n"
+"    font-weight: bold;\n"
+"    min-width: 120px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #c0392b, stop:1 #a93226);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background: #922b21;\n"
+"}"));
+
+        headerLayout->addWidget(logoutButton);
+
+
+        verticalLayout->addLayout(headerLayout);
+
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName("tabWidget");
         studentTab = new QWidget();
         studentTab->setObjectName("studentTab");
         verticalLayout_2 = new QVBoxLayout(studentTab);
+        verticalLayout_2->setSpacing(15);
         verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout_2->setContentsMargins(15, 15, 15, 15);
         horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(10);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         studentSearchEdit = new QLineEdit(studentTab);
         studentSearchEdit->setObjectName("studentSearchEdit");
@@ -101,7 +152,12 @@ public:
         verticalLayout_2->addWidget(studentTableView);
 
         horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(10);
         horizontalLayout->setObjectName("horizontalLayout");
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
         addStudentButton = new QPushButton(studentTab);
         addStudentButton->setObjectName("addStudentButton");
         QIcon icon;
@@ -133,8 +189,11 @@ public:
         clubTab = new QWidget();
         clubTab->setObjectName("clubTab");
         verticalLayout_3 = new QVBoxLayout(clubTab);
+        verticalLayout_3->setSpacing(15);
         verticalLayout_3->setObjectName("verticalLayout_3");
+        verticalLayout_3->setContentsMargins(15, 15, 15, 15);
         horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(10);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
         clubSearchEdit = new QLineEdit(clubTab);
         clubSearchEdit->setObjectName("clubSearchEdit");
@@ -156,7 +215,12 @@ public:
         verticalLayout_3->addWidget(clubTableView);
 
         horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(10);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
         addClubButton = new QPushButton(clubTab);
         addClubButton->setObjectName("addClubButton");
         addClubButton->setIcon(icon);
@@ -182,8 +246,11 @@ public:
         membershipTab = new QWidget();
         membershipTab->setObjectName("membershipTab");
         verticalLayout_4 = new QVBoxLayout(membershipTab);
+        verticalLayout_4->setSpacing(15);
         verticalLayout_4->setObjectName("verticalLayout_4");
+        verticalLayout_4->setContentsMargins(15, 15, 15, 15);
         horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(10);
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         studentFilterEdit = new QLineEdit(membershipTab);
         studentFilterEdit->setObjectName("studentFilterEdit");
@@ -205,7 +272,12 @@ public:
         verticalLayout_4->addWidget(membershipTableView);
 
         horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(10);
         horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_3);
+
         addMembershipButton = new QPushButton(membershipTab);
         addMembershipButton->setObjectName("addMembershipButton");
         addMembershipButton->setIcon(icon);
@@ -246,22 +318,26 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Gestion Club", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Club Management System", nullptr));
+        welcomeLabel->setText(QCoreApplication::translate("MainWindow", "\360\237\216\223 Club Management System", nullptr));
+        logoutButton->setText(QCoreApplication::translate("MainWindow", "\360\237\232\252 D\303\251connexion", nullptr));
+        studentSearchEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "\360\237\224\215 Search students by name, phone...", nullptr));
         studentSearchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
-        addStudentButton->setText(QCoreApplication::translate("MainWindow", "Add Student", nullptr));
-        editStudentButton->setText(QCoreApplication::translate("MainWindow", "Edit Student", nullptr));
-        deleteStudentButton->setText(QCoreApplication::translate("MainWindow", "Delete Student", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(studentTab), QCoreApplication::translate("MainWindow", "Students", nullptr));
+        addStudentButton->setText(QCoreApplication::translate("MainWindow", "\342\236\225 Add Student", nullptr));
+        editStudentButton->setText(QCoreApplication::translate("MainWindow", "\342\234\217\357\270\217 Edit Student", nullptr));
+        deleteStudentButton->setText(QCoreApplication::translate("MainWindow", "\360\237\227\221\357\270\217 Delete Student", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(studentTab), QCoreApplication::translate("MainWindow", "\360\237\223\232 Students", nullptr));
+        clubSearchEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "\360\237\224\215 Search clubs by name, description...", nullptr));
         clubSearchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
-        addClubButton->setText(QCoreApplication::translate("MainWindow", "Add Club", nullptr));
-        editClubButton->setText(QCoreApplication::translate("MainWindow", "Edit Club", nullptr));
-        deleteClubButton->setText(QCoreApplication::translate("MainWindow", "Delete Club", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(clubTab), QCoreApplication::translate("MainWindow", "Clubs", nullptr));
-        studentFilterEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "Filter by student...", nullptr));
-        clubFilterEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "Filter by club...", nullptr));
-        addMembershipButton->setText(QCoreApplication::translate("MainWindow", "Add Membership", nullptr));
-        removeMembershipButton->setText(QCoreApplication::translate("MainWindow", "Remove Membership", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(membershipTab), QCoreApplication::translate("MainWindow", "Memberships", nullptr));
+        addClubButton->setText(QCoreApplication::translate("MainWindow", "\342\236\225 Add Club", nullptr));
+        editClubButton->setText(QCoreApplication::translate("MainWindow", "\342\234\217\357\270\217 Edit Club", nullptr));
+        deleteClubButton->setText(QCoreApplication::translate("MainWindow", "\360\237\227\221\357\270\217 Delete Club", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(clubTab), QCoreApplication::translate("MainWindow", "\360\237\216\257 Clubs", nullptr));
+        studentFilterEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "\360\237\224\215 Filter by student...", nullptr));
+        clubFilterEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "\360\237\224\215 Filter by club...", nullptr));
+        addMembershipButton->setText(QCoreApplication::translate("MainWindow", "\342\236\225 Add Membership", nullptr));
+        removeMembershipButton->setText(QCoreApplication::translate("MainWindow", "\342\236\226 Remove Membership", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(membershipTab), QCoreApplication::translate("MainWindow", "\360\237\221\245 Memberships", nullptr));
     } // retranslateUi
 
 };

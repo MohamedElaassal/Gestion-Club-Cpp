@@ -36,11 +36,17 @@ public:
     {
         if (MembershipDialog->objectName().isEmpty())
             MembershipDialog->setObjectName("MembershipDialog");
-        MembershipDialog->resize(400, 200);
+        MembershipDialog->resize(500, 250);
+        MembershipDialog->setMinimumSize(QSize(500, 250));
         verticalLayout = new QVBoxLayout(MembershipDialog);
+        verticalLayout->setSpacing(20);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 25, 30, 25);
         formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
+        formLayout->setHorizontalSpacing(15);
+        formLayout->setVerticalSpacing(15);
+        formLayout->setLabelAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label = new QLabel(MembershipDialog);
         label->setObjectName("label");
 
@@ -48,6 +54,7 @@ public:
 
         studentComboBox = new QComboBox(MembershipDialog);
         studentComboBox->setObjectName("studentComboBox");
+        studentComboBox->setEditable(true);
 
         formLayout->setWidget(0, QFormLayout::ItemRole::FieldRole, studentComboBox);
 
@@ -58,6 +65,7 @@ public:
 
         clubComboBox = new QComboBox(MembershipDialog);
         clubComboBox->setObjectName("clubComboBox");
+        clubComboBox->setEditable(true);
 
         formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, clubComboBox);
 
@@ -83,7 +91,9 @@ public:
     {
         MembershipDialog->setWindowTitle(QCoreApplication::translate("MembershipDialog", "Add Membership", nullptr));
         label->setText(QCoreApplication::translate("MembershipDialog", "Student:", nullptr));
+        label->setStyleSheet(QCoreApplication::translate("MembershipDialog", "font-weight: 600;", nullptr));
         label_2->setText(QCoreApplication::translate("MembershipDialog", "Club:", nullptr));
+        label_2->setStyleSheet(QCoreApplication::translate("MembershipDialog", "font-weight: 600;", nullptr));
     } // retranslateUi
 
 };

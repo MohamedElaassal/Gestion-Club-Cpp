@@ -37,11 +37,17 @@ public:
     {
         if (ClubDialog->objectName().isEmpty())
             ClubDialog->setObjectName("ClubDialog");
-        ClubDialog->resize(400, 250);
+        ClubDialog->resize(550, 350);
+        ClubDialog->setMinimumSize(QSize(550, 350));
         verticalLayout = new QVBoxLayout(ClubDialog);
+        verticalLayout->setSpacing(20);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 25, 30, 25);
         formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
+        formLayout->setHorizontalSpacing(15);
+        formLayout->setVerticalSpacing(15);
+        formLayout->setLabelAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label = new QLabel(ClubDialog);
         label->setObjectName("label");
 
@@ -54,6 +60,7 @@ public:
 
         label_2 = new QLabel(ClubDialog);
         label_2->setObjectName("label_2");
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing);
 
         formLayout->setWidget(1, QFormLayout::ItemRole::LabelRole, label_2);
 
@@ -84,7 +91,11 @@ public:
     {
         ClubDialog->setWindowTitle(QCoreApplication::translate("ClubDialog", "Club Details", nullptr));
         label->setText(QCoreApplication::translate("ClubDialog", "Name:", nullptr));
+        label->setStyleSheet(QCoreApplication::translate("ClubDialog", "font-weight: 600;", nullptr));
+        nomEdit->setPlaceholderText(QCoreApplication::translate("ClubDialog", "Enter club name", nullptr));
         label_2->setText(QCoreApplication::translate("ClubDialog", "Description:", nullptr));
+        label_2->setStyleSheet(QCoreApplication::translate("ClubDialog", "font-weight: 600;", nullptr));
+        descriptionEdit->setPlaceholderText(QCoreApplication::translate("ClubDialog", "Enter club description and activities...", nullptr));
     } // retranslateUi
 
 };

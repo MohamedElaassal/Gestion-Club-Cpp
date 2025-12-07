@@ -33,6 +33,8 @@ private slots:
 
     void on_studentFilterEdit_textChanged(const QString &arg1);
     void on_clubFilterEdit_textChanged(const QString &arg1);
+    
+    void on_logoutButton_clicked();
 private:
     void setupModels();
     void updateMembershipFilter();

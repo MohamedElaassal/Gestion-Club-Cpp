@@ -25,6 +25,7 @@ class Ui_LoginDialog
 {
 public:
     QVBoxLayout *verticalLayout;
+    QLabel *titleLabel;
     QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *usernameEdit;
@@ -37,11 +38,22 @@ public:
     {
         if (LoginDialog->objectName().isEmpty())
             LoginDialog->setObjectName("LoginDialog");
-        LoginDialog->resize(400, 200);
+        LoginDialog->resize(450, 280);
+        LoginDialog->setMinimumSize(QSize(450, 280));
         verticalLayout = new QVBoxLayout(LoginDialog);
+        verticalLayout->setSpacing(20);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 30, 30, 30);
+        titleLabel = new QLabel(LoginDialog);
+        titleLabel->setObjectName("titleLabel");
+        titleLabel->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(titleLabel);
+
         formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
+        formLayout->setHorizontalSpacing(15);
+        formLayout->setVerticalSpacing(15);
         label = new QLabel(LoginDialog);
         label->setObjectName("label");
 
@@ -90,9 +102,15 @@ public:
 
     void retranslateUi(QDialog *LoginDialog)
     {
-        LoginDialog->setWindowTitle(QCoreApplication::translate("LoginDialog", "Login", nullptr));
+        LoginDialog->setWindowTitle(QCoreApplication::translate("LoginDialog", "Club Management - Login", nullptr));
+        titleLabel->setText(QCoreApplication::translate("LoginDialog", "Welcome Back!", nullptr));
+        titleLabel->setStyleSheet(QCoreApplication::translate("LoginDialog", "font-size: 18pt; font-weight: bold; color: #6366f1;", nullptr));
         label->setText(QCoreApplication::translate("LoginDialog", "Username:", nullptr));
+        label->setStyleSheet(QCoreApplication::translate("LoginDialog", "font-weight: 600;", nullptr));
+        usernameEdit->setPlaceholderText(QCoreApplication::translate("LoginDialog", "Enter your username", nullptr));
         label_2->setText(QCoreApplication::translate("LoginDialog", "Password:", nullptr));
+        label_2->setStyleSheet(QCoreApplication::translate("LoginDialog", "font-weight: 600;", nullptr));
+        passwordEdit->setPlaceholderText(QCoreApplication::translate("LoginDialog", "Enter your password", nullptr));
         loginButton->setText(QCoreApplication::translate("LoginDialog", "Login", nullptr));
         registerButton->setText(QCoreApplication::translate("LoginDialog", "Register", nullptr));
     } // retranslateUi

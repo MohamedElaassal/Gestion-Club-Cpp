@@ -4,8 +4,10 @@
 #include "studentdialog.h"
 #include "clubdialog.h"
 #include "membershipdialog.h"
+#include "logindialog.h"
 #include <QMessageBox>
 #include <QPropertyAnimation>
+#include <QApplication>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -209,4 +211,30 @@ void MainWindow::updateMembershipFilter()
     }
 
     m_membershipModel->setQuery(queryString, Database::instance().getConnection());
+}
+
+void MainWindow::on_logoutButton_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Déconnexion", 
+                                   "Êtes-vous sûr de vouloir vous déconnecter?",
+                                   QMessageBox::Yes | QMessageBox::No);
+    
+    if (reply == QMessageBox::Yes) {
+        // Fermer la fenêtre principale
+        this->close();
+        
+        // Afficher la fenêtre de login
+        LoginDialog *loginDialog = new LoginDialog();
+        if (loginDialog->exec() == QDialog::Accepted) {
+            // Si l'utilisateur se connecte à nouveau, rouvrir MainWindow
+            MainWindow *w = new MainWindow();
+            w->show();
+        } else {
+            // Si l'utilisateur annule le login, quitter l'application
+            QApplication::quit();
+        }
+        
+        delete loginDialog;
+    }
 }

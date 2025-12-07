@@ -25,6 +25,7 @@ class Ui_RegisterDialog
 {
 public:
     QVBoxLayout *verticalLayout;
+    QLabel *titleLabel;
     QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *usernameEdit;
@@ -38,11 +39,22 @@ public:
     {
         if (RegisterDialog->objectName().isEmpty())
             RegisterDialog->setObjectName("RegisterDialog");
-        RegisterDialog->resize(400, 250);
+        RegisterDialog->resize(450, 350);
+        RegisterDialog->setMinimumSize(QSize(450, 350));
         verticalLayout = new QVBoxLayout(RegisterDialog);
+        verticalLayout->setSpacing(20);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 30, 30, 30);
+        titleLabel = new QLabel(RegisterDialog);
+        titleLabel->setObjectName("titleLabel");
+        titleLabel->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(titleLabel);
+
         formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
+        formLayout->setHorizontalSpacing(15);
+        formLayout->setVerticalSpacing(15);
         label = new QLabel(RegisterDialog);
         label->setObjectName("label");
 
@@ -94,10 +106,18 @@ public:
 
     void retranslateUi(QDialog *RegisterDialog)
     {
-        RegisterDialog->setWindowTitle(QCoreApplication::translate("RegisterDialog", "Register", nullptr));
+        RegisterDialog->setWindowTitle(QCoreApplication::translate("RegisterDialog", "Club Management - Register", nullptr));
+        titleLabel->setText(QCoreApplication::translate("RegisterDialog", "Create New Account", nullptr));
+        titleLabel->setStyleSheet(QCoreApplication::translate("RegisterDialog", "font-size: 18pt; font-weight: bold; color: #10b981;", nullptr));
         label->setText(QCoreApplication::translate("RegisterDialog", "Username:", nullptr));
+        label->setStyleSheet(QCoreApplication::translate("RegisterDialog", "font-weight: 600;", nullptr));
+        usernameEdit->setPlaceholderText(QCoreApplication::translate("RegisterDialog", "Choose a username", nullptr));
         label_2->setText(QCoreApplication::translate("RegisterDialog", "Password:", nullptr));
+        label_2->setStyleSheet(QCoreApplication::translate("RegisterDialog", "font-weight: 600;", nullptr));
+        passwordEdit->setPlaceholderText(QCoreApplication::translate("RegisterDialog", "Create a strong password", nullptr));
         label_3->setText(QCoreApplication::translate("RegisterDialog", "Confirm Password:", nullptr));
+        label_3->setStyleSheet(QCoreApplication::translate("RegisterDialog", "font-weight: 600;", nullptr));
+        confirmPasswordEdit->setPlaceholderText(QCoreApplication::translate("RegisterDialog", "Re-enter your password", nullptr));
         registerButton->setText(QCoreApplication::translate("RegisterDialog", "Register", nullptr));
     } // retranslateUi
 

@@ -38,11 +38,17 @@ public:
     {
         if (StudentDialog->objectName().isEmpty())
             StudentDialog->setObjectName("StudentDialog");
-        StudentDialog->resize(400, 200);
+        StudentDialog->resize(500, 280);
+        StudentDialog->setMinimumSize(QSize(500, 280));
         verticalLayout = new QVBoxLayout(StudentDialog);
+        verticalLayout->setSpacing(20);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 25, 30, 25);
         formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
+        formLayout->setHorizontalSpacing(15);
+        formLayout->setVerticalSpacing(15);
+        formLayout->setLabelAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label = new QLabel(StudentDialog);
         label->setObjectName("label");
 
@@ -95,8 +101,14 @@ public:
     {
         StudentDialog->setWindowTitle(QCoreApplication::translate("StudentDialog", "Student Details", nullptr));
         label->setText(QCoreApplication::translate("StudentDialog", "Name:", nullptr));
+        label->setStyleSheet(QCoreApplication::translate("StudentDialog", "font-weight: 600;", nullptr));
+        nomEdit->setPlaceholderText(QCoreApplication::translate("StudentDialog", "Enter student's last name", nullptr));
         label_2->setText(QCoreApplication::translate("StudentDialog", "First Name:", nullptr));
+        label_2->setStyleSheet(QCoreApplication::translate("StudentDialog", "font-weight: 600;", nullptr));
+        prenomEdit->setPlaceholderText(QCoreApplication::translate("StudentDialog", "Enter student's first name", nullptr));
         label_3->setText(QCoreApplication::translate("StudentDialog", "Phone:", nullptr));
+        label_3->setStyleSheet(QCoreApplication::translate("StudentDialog", "font-weight: 600;", nullptr));
+        teleEdit->setPlaceholderText(QCoreApplication::translate("StudentDialog", "Enter phone number", nullptr));
     } // retranslateUi
 
 };
