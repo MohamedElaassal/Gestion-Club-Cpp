@@ -479,6 +479,7 @@ furnished to do so, subject to the following conditions...
 
 **Mohamed Elaassal**
 - GitHub: [@MohamedElaassal](https://github.com/MohamedElaassal)
+- GitHub: [@HAMZA-EL-OUATTAB](https://github.com/HAMZA-EL-OUATTAB)
 - Project: [Gestion-Club-Cpp](https://github.com/MohamedElaassal/Gestion-Club-Cpp)
 
 ### Academic Context
